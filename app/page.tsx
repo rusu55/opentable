@@ -2,12 +2,24 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import Cards from './components/Cards'
-import Header from './components/Header'
+import SearchHeader from './components/SearchHeader'
+import { PrismaClient } from '@prisma/client'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+const prisma = new PrismaClient();
+
+const fetchRestaurants = async () =>{
+  const restaurants = await prisma.restaurant.findMany()
+  return restaurants;
+}
+
+export default async function Home() {
+  const restaurants = await fetchRestaurants()
   return (
-      <Header />
+    <>
+      <SearchHeader />
+      <Cards />
+    </>
   )
 }
