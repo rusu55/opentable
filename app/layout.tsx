@@ -1,4 +1,9 @@
-import './globals.css'
+import './globals.css';
+
+import Container from './components/Container';
+import NavBar from './components/NavBar';
+import SearchHeader from './components/SearchHeader';
+import Cards from './components/Cards';
 
 export default function RootLayout({
   children,
@@ -12,7 +17,12 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <Container>
+          <NavBar />         
+          {children}
+        </Container>
+      </body>
     </html>
   )
 }
