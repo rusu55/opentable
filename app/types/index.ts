@@ -1,6 +1,6 @@
 import {Restaurant, Cuisine, Location, PRICE} from '@prisma/client'
 
-export type RestaurantsProps {
+export type RestaurantsProps = {
     id: number,
     name: string,
     main_image: string,
