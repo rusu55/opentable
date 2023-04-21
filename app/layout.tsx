@@ -3,6 +3,7 @@ import { Nunito } from '@next/font/google';
 
 import Container from './components/Container';
 import NavBar from './components/NavBar';
+import RegisterModal from './components/modals/RegisterModal';
 export const metadata = {
   title: 'Go Electrical Us',
   description: 'Salut'
@@ -25,7 +26,8 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>       
+      <body>     
+        <RegisterModal />  
         <Container>          
           <NavBar />         
           {children}
